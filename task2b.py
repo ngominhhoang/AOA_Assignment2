@@ -37,4 +37,4 @@ if __name__ == "__main__":
     order = trace_route(n, k, c, f)
 
     for it in order:
-        print(it,' ', end="")
+        print(it, '', end="")
