@@ -2,6 +2,7 @@ from utils import read_input_basic
 import heapq
 import collections
 
+# find the order of platforms
 def trace_route(n, k, c, f):
     order = []
     i = n
@@ -18,7 +19,8 @@ def trace_route(n, k, c, f):
     return order
 
 def task4(n, k, c):
-
+    
+    # improve the dp with deque
     f = [1e15 for i in range(0,n+1)]
 
     f[0] = 0

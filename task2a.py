@@ -2,6 +2,7 @@ from utils import read_input_basic
 import heapq
 import collections
 
+# find the order of platforms
 def trace_route(n, k, c, f):
     order = []
     i = n
@@ -18,8 +19,7 @@ def trace_route(n, k, c, f):
     return order
 
 def task2a(n, k, c):
-    #Task 2a
-
+    #Task 2a: implement dp function as the top-down approach
     def find_min(i):
         if i == 0:
             return 0
