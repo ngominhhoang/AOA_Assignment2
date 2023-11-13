@@ -47,28 +47,8 @@ def alg1(n, k, cost):
 
         return minimum, minimum_order
 
-
-"""
-def alg1(n, k, cost):
-    minimum = [-1] * (n + 1)
-    minimum[0] = 0
-    for position in range(n):
-        for i in range(position + 1, position + k + 1):
-            if i > n:
-                continue
-            elif minimum[i] == -1 or minimum[position] + cost[position] < minimum[i]:
-                minimum[i] = minimum[position] + cost[position]
-
-    print(minimum)
-    print(minimum[n])
-    return minimum
-"""
-
 if __name__ == "__main__":
     n, k, cost = read_input()
     minimum, minimum_order = alg1(n, k, cost)
-    # print(minimum)
-    # print(minimum[n])
-    # print(minimum_order)
-    for i in minimum_order:
+    for i in minimum_order[0:-1]:
         print(i, '', end="")

@@ -17,25 +17,10 @@ def read_input():
         except:
             print("You must enter integers. Please try again: ")
             continue
-
-    """
-    correct_input = False
-    while not correct_input:
-        try:
-            m = int(input())
-            correct_input = True
-        except:
-            print("You must enter an integer. Please try again: ")
-            continue
-    """
-
-    # print(n, k)
-    # print(cost)
-    # print(m)
     return n, k, cost, m
 
 
-def alg1(n, k, cost, m, final_n):
+def alg5(n, k, cost, m, final_n):
     minimum = [-1] * (n + 1)
     minimum_order = [-1]
     if n == 0:
@@ -48,7 +33,7 @@ def alg1(n, k, cost, m, final_n):
     else:
         for i in range(1, k + 1):
             if n - i >= 0:
-                minimum_placeholder, minimum_placeholder_order = alg1(n - i, k, cost, m - 1, final_n)
+                minimum_placeholder, minimum_placeholder_order = alg5(n - i, k, cost, m - 1, final_n)
                 if minimum_placeholder[-1] != -1:
                     minimum_placeholder.append(minimum_placeholder[n - i] + cost[n - i])
                     minimum_placeholder_order.append(n)
@@ -70,7 +55,7 @@ def alg1(n, k, cost, m, final_n):
 if __name__ == "__main__":
     n, k, cost, m = read_input()
     final_n = n
-    minimum, minimum_order = alg1(n, k, cost, m, final_n)
+    minimum, minimum_order = alg5(n, k, cost, m, final_n)
     # print(minimum)
     if minimum[n] == -1:
         print("No solution possible.")
