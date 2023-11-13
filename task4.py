@@ -51,6 +51,5 @@ if __name__ == "__main__":
     res, f = task4(n, k, c)
     
     order = trace_route(n, k, c, f)
-    order.append(n)
     for it in order:
         print(it, '', end="")
