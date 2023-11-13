@@ -30,9 +30,3 @@ run7:
 
 run8:
 	PYTHONPATH=. /usr/bin/python3 task8.py
-
-plot:
-	PYTHONPATH=. /usr/bin/python3 src/plot.py
-
-test:
-	PYTHONPATH=.:./src /usr/bin/python3 -m unittest
