@@ -6,7 +6,7 @@ UNINITIALIZED = -1
 INFINITY = int(1e15)
 
 def trace_route(n, k, m, c, f):
-    # returns: m + 1 indicies of platforms to jump
+    # returns: m indicies of platforms to jump
     
     # base case: we start from 0
     if n == 0:
@@ -15,7 +15,7 @@ def trace_route(n, k, m, c, f):
     # subproblem: pick the best platform to jump from 
     for i in range(max(0, n - k), n):
         if f[n][m] == dp(i, k, m - 1, c, f) + c[i]:
-            return trace_route(i, k, m - 1, c, f) + [n]
+            return trace_route(i, k, m - 1, c, f) + [i]
 
     assert False, "unreachable"
 
